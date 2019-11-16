@@ -1,7 +1,8 @@
-import { GET_ROADMAPS } from '../actions/types';
+import { GET_ROADMAPS, GET_DETAILS } from '../actions/types';
 
 const initialState = {
-  roadmap: []
+  roadmap: [],
+  detail: {}
 };
 
 export default function(state = initialState, action) {
@@ -10,6 +11,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         roadmap: action.payload
+      };
+    case GET_DETAILS:
+      return {
+        ...state,
+        detail: action.payload
       };
     default:
       return state;
