@@ -5,7 +5,7 @@ const Navigation = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
-          <a className="navbar-brand " href="/">
+          <a className="navbar-brand " href="/roadmaps">
             Roadmapアプリケーション
           </a>
           <button
