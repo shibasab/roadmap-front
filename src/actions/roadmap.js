@@ -14,6 +14,7 @@ export const getRoadmaps = () => (dispatch, getState) => {
     .catch(err => console.log('err', err));
 };
 
+//GET DETAILS 特定のロードマップを取得
 export const getDetails = id => (dispatch, getState) => {
   axios
     .get(`http://127.0.0.1:8000/api/v1/roadmaps/${id}`)

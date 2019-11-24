@@ -6,7 +6,7 @@ import Detail from '../Pages/Detail';
 export default class Routes extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <Switch>
           <Route exact path="/roadmaps" component={List} />
           <Route exact path="/roadmaps/:id" component={Detail} />

@@ -16,13 +16,34 @@ export class Detail extends Component {
   }
 
   render() {
+    let detail = this.props.detail;
+
     return (
       <Fragment>
-        <br></br>
-        <h4>Roadmap Details</h4>
-        <div className="list-group">
-          <p>{this.props.detail.title}</p>
-          <p>{this.props.detail.detail}</p>
+        <div>
+          <h2>{detail.title}</h2>
+          <h4 style={{ fontWeight: 'lighter' }}>{detail.overview}</h4>
+          <p>like: {detail.like}</p>
+          {detail.roadmap ? (
+            <div className="row" style={{ marginTop: '10px' }}>
+              {detail.roadmap.map(roadmap => (
+                <div key={roadmap.id} className="col-sm-6">
+                  <div className="card">
+                    <div className="card-body">
+                      <p className="card-title" style={{ fontSize: '1.5em' }}>
+                        {roadmap.title}
+                      </p>
+                      <p className="card-text" style={{ color: 'gray' }}>
+                        {roadmap.detail}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p></p>
+          )}
         </div>
       </Fragment>
     );
@@ -33,9 +54,4 @@ const mapStateToProps = state => ({
   detail: state.roadmap.detail
 });
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    { getDetails }
-  )(Detail)
-);
+export default withRouter(connect(mapStateToProps, { getDetails })(Detail));
