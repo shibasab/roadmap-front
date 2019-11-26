@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { GET_ROADMAPS, GET_DETAILS } from './types';
 
+const API_URL = 'https://warm-peak-98470.herokuapp.com/api/v1/roadmaps/';
+
 // GET ROADMAPS ロードマップ一覧を取得
 export const getRoadmaps = () => (dispatch, getState) => {
   axios
-    .get('http://127.0.0.1:8000/api/v1/roadmaps/')
+    .get(API_URL)
     .then(res => {
       dispatch({
         type: GET_ROADMAPS,
@@ -17,7 +19,7 @@ export const getRoadmaps = () => (dispatch, getState) => {
 //GET DETAILS 特定のロードマップを取得
 export const getDetails = id => (dispatch, getState) => {
   axios
-    .get(`http://127.0.0.1:8000/api/v1/roadmaps/${id}`)
+    .get(`${API_URL + id}`)
     .then(res => {
       dispatch({
         type: GET_DETAILS,
