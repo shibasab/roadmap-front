@@ -7,7 +7,7 @@ import { getRoadmaps } from '../../actions/roadmap';
 
 export class Roadmap extends Component {
   static propTypes = {
-    roadmap: PropTypes.array.isRequired,
+    roadmaps: PropTypes.array.isRequired,
     getRoadmaps: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired
   };
@@ -25,7 +25,7 @@ export class Roadmap extends Component {
       <Fragment>
         <br></br>
         <div className="">
-          {this.props.roadmap.map(roadmap => (
+          {this.props.roadmaps.map(roadmap => (
             <div key={roadmap.id} className="mb-3">
               <div className="">
                 <Link
@@ -59,7 +59,7 @@ export class Roadmap extends Component {
 }
 
 const mapStateToProps = state => ({
-  roadmap: state.roadmap.roadmap
+  roadmaps: state.roadmap.roadmaps
 });
 
 export default withRouter(connect(mapStateToProps, { getRoadmaps })(Roadmap));

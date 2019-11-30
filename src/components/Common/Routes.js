@@ -2,6 +2,7 @@ import { Route, Switch } from 'react-router-dom';
 import React, { Component } from 'react';
 import List from '../Pages/List';
 import Detail from '../Pages/Detail';
+import Post from '../Pages/Post';
 
 export default class Routes extends Component {
   render() {
@@ -9,6 +10,7 @@ export default class Routes extends Component {
       <div className="container">
         <Switch>
           <Route exact path="/roadmaps" component={List} />
+          <Route exact path="/roadmaps/post" component={Post} />
           <Route exact path="/roadmaps/:id" component={Detail} />
           <Route component={NotFound} />
         </Switch>

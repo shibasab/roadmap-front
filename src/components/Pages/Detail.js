@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import { getDetails } from '../../actions/roadmap';
-
+// import ChartDiagram from '../Diagram/ChartDiagram';
 export class Detail extends Component {
   static propTypes = {
     detail: PropTypes.object.isRequired,
@@ -21,6 +21,7 @@ export class Detail extends Component {
     return (
       <Fragment>
         <div>
+          {/* <ChartDiagram /> */}
           <h2>{detail.title}</h2>
           <h4 style={{ fontWeight: 'lighter' }}>{detail.overview}</h4>
           <p>like: {detail.like}</p>
